@@ -1,0 +1,95 @@
+:root {
+    --bg-color: #100f0f;
+    --text-color: #333333;
+    --input-bg: #f5f5f5;
+    --task-bg: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode {
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --input-bg: #2d2d2d;
+    --task-bg: #2d2d2d;
+    --shadow: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Arial', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.input-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.theme-btn {
+    display: block;
+    margin: 2rem auto;
+    background-color: #666;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background-color: var(--task-bg);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px var(--shadow);
+}
+
+.task-item.completed {
+    opacity: 0.7;
+    text-decoration: line-through;
+}
+
+.delete-btn {
+    background-color: #ff4444;
+    padding: 0.5rem 1rem;
+}
+
+.delete-btn:hover {
+    background-color: #cc0000;
+}
