@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="weather-app">
+            <div class="search-container">
+                <h1><i class="fas fa-cloud-sun"></i> Weather App</h1>
+                <div class="search-box">
+                    <input type="text" id="city-input" placeholder="Search for a city..." />
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            
+            <div class="weather-content" id="weather-content" style="display: none;">
+                <!-- Tabs -->
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="current">
+                        <i class="fas fa-cloud-sun"></i> Current Weather
+                    </button>
+                    <button class="tab-btn" data-tab="forecast">
+                        <i class="fas fa-calendar-alt"></i> 5-Day Forecast
+                    </button>
+                </div>
+
+                <!-- Current Weather Tab -->
+                <div class="tab-content active" id="current-tab">
+                    <div class="weather-main">
+                        <div class="location-info">
+                            <h2 id="city"><i class="fas fa-map-marker-alt"></i> Search for a city</h2>
+                            <p id="country">Enter a city name to get weather information</p>
+                        </div>
+                        
+                        <div class="temperature-display">
+                            <div class="weather-icon">
+                                <img id="icon" src="" alt="Weather Icon">
+                            </div>
+                            <div class="temp-info">
+                                <h1 id="temp">--°</h1>
+                                <p id="description">Weather Description</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="weather-details">
+                        <div class="detail-card">
+                            <i class="fas fa-eye"></i>
+                            <div>
+                                <p>Visibility</p>
+                                <span id="visibility">-- km</span>
+                            </div>
+                        </div>
+                        <div class="detail-card">
+                            <i class="fas fa-tint"></i>
+                            <div>
+                                <p>Humidity</p>
+                                <span id="humidity">--%</span>
+                            </div>
+                        </div>
+                        <div class="detail-card">
+                            <i class="fas fa-wind"></i>
+                            <div>
+                                <p>Wind Speed</p>
+                                <span id="wind">-- km/h</span>
+                            </div>
+                        </div>
+                        <div class="detail-card">
+                            <i class="fas fa-thermometer-half"></i>
+                            <div>
+                                <p>Pressure</p>
+                                <span id="pressure">-- hPa</span>
+                            </div>
+                        </div>
+                        <div class="detail-card">
+                            <i class="fas fa-sun"></i>
+                            <div>
+                                <p>Sunrise</p>
+                                <span id="sunrise">--:--</span>
+                            </div>
+                        </div>
+                        <div class="detail-card">
+                            <i class="fas fa-moon"></i>
+                            <div>
+                                <p>Sunset</p>
+                                <span id="sunset">--:--</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Forecast Tab -->
+                <div class="tab-content" id="forecast-tab">
+                    <div class="forecast-container" id="forecast-container">
+                        <!-- Forecast items will be inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="config.js"></script>
+    <script src="script .js"></script>
+</body>
+</html>
