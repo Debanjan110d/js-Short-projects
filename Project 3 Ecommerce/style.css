@@ -11,25 +11,30 @@
    Body Styles
    —————————————— */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #121212;
-  color: #FFFFFF;
+  font-family: 'Inter', 'Segoe UI', 'SF Pro Display', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #0F0F23 0%, #1a1a2e 50%, #16213e 100%);
+  color: #E2E8F0;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 20px;
 }
 
 /* ——————————————
-   Main Container (LEFT‑ALIGNED!)
+   Main Container
    —————————————— */
 .container {
-  background-color: #1E1E1E;
-  padding: 20px;
-  border-radius: 10px;
-  width: 400px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  /* THIS IS THE KEY: left‑align everything inside */
+  background: rgba(30, 41, 59, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  padding: 32px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(148, 163, 184, 0.05);
   text-align: left;
 }
 
@@ -37,70 +42,160 @@ body {
    Headings
    —————————————— */
 h1, h2 {
-  color: #FFF;
-  /* h1 sits a bit higher than in the weather app */
-  margin-bottom: 15px;
-  font-weight: bold;
+  color: #F8FAFC;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
 }
 h1 {
-  font-size: 24px;
+  font-size: 28px;
+  background: linear-gradient(135deg, #F8FAFC 0%, #CBD5E1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 h2 {
-  margin-top: 30px;
-  font-size: 20px;
+  margin-top: 40px;
+  font-size: 22px;
+  color: #CBD5E1;
 }
 
 /* ——————————————
    Product List Items
    —————————————— */
 #product-list .product {
-  background-color: #2b2b2b;
+  background: linear-gradient(135deg, rgba(51, 65, 85, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%);
+  border: 1px solid rgba(148, 163, 184, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  color: #FFF;
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  color: #F1F5F9;
   font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+#product-list .product:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  border-color: rgba(139, 92, 246, 0.3);
 }
 
 /* ——————————————
-   Buttons: Reuse your purple theme
+   Buttons
    —————————————— */
 button {
-  background-color: #6200EA;
+  background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 50%, #6D28D9 100%);
   border: none;
-  padding: 5px 10px;
-  color: #FFF;
-  border-radius: 5px;
+  padding: 8px 16px;
+  color: #FFFFFF;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s;
-}
-button:hover {
-  background-color: #3700B3;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.025em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px 0 rgba(139, 92, 246, 0.3);
 }
 
-/* If you ever need a slightly bigger button (like Checkout) */
+button:hover {
+  background: linear-gradient(135deg, #9F7AEA 0%, #8B5CF6 50%, #7C3AED 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px 0 rgba(139, 92, 246, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
 #checkout-btn {
-  padding: 10px;
+  padding: 14px 24px;
+  font-size: 16px;
+  border-radius: 10px;
+  width: 100%;
+  margin-top: 16px;
 }
 
 /* ——————————————
    Shopping Cart Area
    —————————————— */
 #cart-items {
-  margin-bottom: 20px;
-  color: #CCC;
+  margin-bottom: 24px;
+  color: #CBD5E1;
 }
+
 #cart-items p {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  font-weight: 500;
 }
 
 /* Total section */
+#cart-total {
+  background: rgba(15, 23, 42, 0.5);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  margin-bottom: 20px;
+}
+
 #cart-total p {
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #F1F5F9;
+}
+
+/* ——————————————
+   Cart Items
+   —————————————— */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.8) 100%);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  padding: 16px 20px;
   margin-bottom: 10px;
+  border-radius: 10px;
+  color: #F1F5F9;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cart-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.2);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.cart-item span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #E2E8F0;
+}
+
+.cart-item button {
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 50%, #B91C1C 100%);
+  color: #FFFFFF;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px 0 rgba(239, 68, 68, 0.3);
+}
+
+.cart-item button:hover {
+  background: linear-gradient(135deg, #F87171 0%, #EF4444 50%, #DC2626 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px 0 rgba(239, 68, 68, 0.4);
 }
 
 /* ——————————————
@@ -108,4 +203,25 @@ button:hover {
    —————————————— */
 .hidden {
   display: none;
+}
+
+/* ——————————————
+   Scrollbar Styling
+   —————————————— */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.8);
 }
