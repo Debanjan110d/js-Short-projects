@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Enhanced Quiz App</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Enhanced Quiz App</h1>
+
+        <div id="setup-container">
+            <h2>Select Number of Questions</h2>
+            <div class="question-selector">
+                <label for="question-count">How many questions? (1-7)</label>
+                <select id="question-count">
+                    <option value="1">1 Question</option>
+                    <option value="2">2 Questions</option>
+                    <option value="3">3 Questions</option>
+                    <option value="4">4 Questions</option>
+                    <option value="5" selected>5 Questions</option>
+                    <option value="6">6 Questions</option>
+                    <option value="7">7 Questions</option>
+                </select>
+            </div>
+            <button id="start-btn">Start Quiz</button>
+        </div>
+
+        <div id="quiz-container" class="hidden">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="question-counter">
+                <span id="current-question">1</span> / <span id="total-questions">5</span>
+            </div>
+
+            <div id="question-container">
+                <h2 id="question-text"></h2>
+                <ul id="choices-list">
+                    <!-- Choices will be added dynamically here -->
+                </ul>
+                <button id="next-btn" class="hidden">Next Question</button>
+            </div>
+        </div>
+
+        <div id="result-container" class="hidden">
+            <div class="result-card">
+                <h2>Quiz Complete!</h2>
+                <div class="score-display">
+                    <span id="score-number"></span>
+                    <span id="total-score"></span>
+                </div>
+                <p id="score-message"></p>
+                <button id="restart-btn">Take Another Quiz</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
